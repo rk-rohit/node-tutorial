@@ -1,9 +1,13 @@
 const path = require("path");
 const express = require("express");
+
 const app = express();
 
 const productRoutes = require("./routes/productRoutes");
 const shopRoutes = require("./routes/shopRoutes");
+
+app.set("view engine", 'ejs');
+app.set("views", path.join(__dirname, "views"));
 
 app.use("/admin", productRoutes);
 app.use("/", shopRoutes);
@@ -12,7 +16,7 @@ app.use(express.static(path.join(__dirname, "public")))
 
 //error page
 app.use((req, res)=>{
-    res.status(400).sendFile(path.join(__dirname, "view", "error.html"));
+    res.render("error");
 })
 
 app.listen(3000);

@@ -4,7 +4,7 @@ const path = require("path");
 const route = express.Router();
 
 route.get("/add-product", (req, res, next)=>{
-    res.sendFile(path.join(__dirname, "..", "view", "admin/addProduct.html"));
+    res.render("admin/addProduct");
 });
 
 route.post("/save-product", (req, res, next)=>{
@@ -12,7 +12,7 @@ route.post("/save-product", (req, res, next)=>{
 })
 
 route.get("/product", (req, res)=>{
-    res.sendFile(path.join(__dirname, "..", "view", "admin/productList.html"));
+    res.render("admin/productList");
 })
 
 module.exports = route;

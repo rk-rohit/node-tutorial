@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Product List</title>
   <link rel="stylesheet" href="/css/admin/product.css">
 </head>
-<body>
+  <%- include("../partials/header", { pageTitle : "Admin Product" }) %>
+  
   <div class="container">
     <h1>Admin Product List</h1>
     <a href="#" class="add-btn">Add New Product</a>
@@ -23,7 +22,9 @@
       </thead>
       <tbody>
         <tr>
-          <td><img src="https://images.pexels.com/photos/2587370/pexels-photo-2587370.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Product A" class="product-image"></td>
+          <td><img
+              src="https://images.pexels.com/photos/2587370/pexels-photo-2587370.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Product A" class="product-image"></td>
           <td>1</td>
           <td>Product A</td>
           <td>$99.99</td>
@@ -34,7 +35,9 @@
           </td>
         </tr>
         <tr>
-          <td><img src="https://images.pexels.com/photos/2587370/pexels-photo-2587370.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Product B" class="product-image"></td>
+          <td><img
+              src="https://images.pexels.com/photos/2587370/pexels-photo-2587370.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Product B" class="product-image"></td>
           <td>2</td>
           <td>Product B</td>
           <td>$149.99</td>
@@ -45,7 +48,9 @@
           </td>
         </tr>
         <tr>
-          <td><img src="https://images.pexels.com/photos/2587370/pexels-photo-2587370.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Product C" class="product-image"></td>
+          <td><img
+              src="https://images.pexels.com/photos/2587370/pexels-photo-2587370.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Product C" class="product-image"></td>
           <td>3</td>
           <td>Product C</td>
           <td>$199.99</td>
@@ -56,7 +61,9 @@
           </td>
         </tr>
         <tr>
-          <td><img src="https://images.pexels.com/photos/2587370/pexels-photo-2587370.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Product D" class="product-image"></td>
+          <td><img
+              src="https://images.pexels.com/photos/2587370/pexels-photo-2587370.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Product D" class="product-image"></td>
           <td>4</td>
           <td>Product D</td>
           <td>$249.99</td>
@@ -70,5 +77,6 @@
     </table>
   </div>
 
-</body>
+  </body>
+
 </html>
