@@ -4,55 +4,32 @@
 <head>
   <link rel="stylesheet" href="/css/product.css">
 </head>
-  <%- include("partials/header", { pageTitle : "shop" }) %>
-  <div class="container">
-    <h1>Product List</h1>
-    <div class="product-list">
-      <div class="product-item">
-        <img src="https://images.pexels.com/photos/2587370/pexels-photo-2587370.jpeg?auto=compress&cs=tinysrgb&w=800"
-          alt="Product 1" class="product-image">
-        <div class="product-info">
-          <h2 class="product-name">Product 1</h2>
-          <p class="product-price">$99.99</p>
-          <p class="product-description">This is a great product that will make your life easier and better!</p>
-          <a href="#" class="buy-now">Buy Now</a>
-        </div>
-      </div>
-
-      <div class="product-item">
-        <img src="https://images.pexels.com/photos/2587370/pexels-photo-2587370.jpeg?auto=compress&cs=tinysrgb&w=800"
-          alt="Product 2" class="product-image">
-        <div class="product-info">
-          <h2 class="product-name">Product 2</h2>
-          <p class="product-price">$149.99</p>
-          <p class="product-description">This amazing product is perfect for everyday use.</p>
-          <a href="#" class="buy-now">Buy Now</a>
-        </div>
-      </div>
-
-      <div class="product-item">
-        <img src="https://images.pexels.com/photos/2587370/pexels-photo-2587370.jpeg?auto=compress&cs=tinysrgb&w=800"
-          alt="Product 3" class="product-image">
-        <div class="product-info">
-          <h2 class="product-name">Product 3</h2>
-          <p class="product-price">$199.99</p>
-          <p class="product-description">Get the latest and greatest product in the market now!</p>
-          <a href="#" class="buy-now">Buy Now</a>
-        </div>
-      </div>
-
-      <div class="product-item">
-        <img src="https://images.pexels.com/photos/2587370/pexels-photo-2587370.jpeg?auto=compress&cs=tinysrgb&w=800"
-          alt="Product 4" class="product-image">
-        <div class="product-info">
-          <h2 class="product-name">Product 4</h2>
-          <p class="product-price">$249.99</p>
-          <p class="product-description">Top-quality product for an unbeatable price!</p>
-          <a href="#" class="buy-now">Buy Now</a>
-        </div>
+<%- include("partials/header", { pageTitle : "shop" }) %>
+<div class="container">
+  <h1>Product List</h1>
+  <% if (products.length> 0) { %>
+  <div class="product-list">
+    <% products.forEach(function(product){ %>
+    <div class="product-item">
+      <img src="<%= product.imageUrl %>" alt="<%= product.productName %>" class="product-image">
+      <div class="product-info">
+        <h2 class="product-name">
+          <%= product.productName %>
+        </h2>
+        <p class="product-price">
+          $ <%= product.productPrice %>
+        </p>
+        <p class="product-description">
+          <%= product.productDescription %>
+        </p>
+        <a href="#" class="buy-now">Buy Now</a>
       </div>
     </div>
+    <%});%>
   </div>
-  </body>
-
+  <% } else { %>
+  <h2> No Product Avaiable!</h2>
+  <% } %>
+</div>
+</body>
 </html>

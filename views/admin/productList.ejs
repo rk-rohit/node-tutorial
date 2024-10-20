@@ -8,7 +8,7 @@
   
   <div class="container">
     <h1>Admin Product List</h1>
-    <a href="#" class="add-btn">Add New Product</a>
+    <a href="/admin/add-product" class="add-btn">Add New Product</a>
     <table>
       <thead>
         <tr>
@@ -21,62 +21,28 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td><img
-              src="https://images.pexels.com/photos/2587370/pexels-photo-2587370.jpeg?auto=compress&cs=tinysrgb&w=800"
-              alt="Product A" class="product-image"></td>
-          <td>1</td>
-          <td>Product A</td>
-          <td>$99.99</td>
-          <td>50</td>
-          <td>
-            <a href="#" class="action-btn edit-btn">Edit</a>
-            <a href="#" class="action-btn delete-btn">Delete</a>
-          </td>
-        </tr>
-        <tr>
-          <td><img
-              src="https://images.pexels.com/photos/2587370/pexels-photo-2587370.jpeg?auto=compress&cs=tinysrgb&w=800"
-              alt="Product B" class="product-image"></td>
-          <td>2</td>
-          <td>Product B</td>
-          <td>$149.99</td>
-          <td>30</td>
-          <td>
-            <a href="#" class="action-btn edit-btn">Edit</a>
-            <a href="#" class="action-btn delete-btn">Delete</a>
-          </td>
-        </tr>
-        <tr>
-          <td><img
-              src="https://images.pexels.com/photos/2587370/pexels-photo-2587370.jpeg?auto=compress&cs=tinysrgb&w=800"
-              alt="Product C" class="product-image"></td>
-          <td>3</td>
-          <td>Product C</td>
-          <td>$199.99</td>
-          <td>20</td>
-          <td>
-            <a href="#" class="action-btn edit-btn">Edit</a>
-            <a href="#" class="action-btn delete-btn">Delete</a>
-          </td>
-        </tr>
-        <tr>
-          <td><img
-              src="https://images.pexels.com/photos/2587370/pexels-photo-2587370.jpeg?auto=compress&cs=tinysrgb&w=800"
-              alt="Product D" class="product-image"></td>
-          <td>4</td>
-          <td>Product D</td>
-          <td>$249.99</td>
-          <td>10</td>
-          <td>
-            <a href="#" class="action-btn edit-btn">Edit</a>
-            <a href="#" class="action-btn delete-btn">Delete</a>
-          </td>
-        </tr>
+        <% if (products.length > 0) { %>
+            <% products.forEach(function(product) { %>
+              <tr>
+                <td><img
+                    src="<%= product.imageUrl %>"
+                    alt="<%= product.productName %>" class="product-image"></td>
+                <td><%= product.id %></td>
+                <td><%= product.productName %></td>
+                <td>$ <%= product.productPrice %></td>
+                <td><%= product.productQuantity %></td>
+                <td>
+                  <a href="#" class="action-btn edit-btn">Edit</a>
+                  <a href="#" class="action-btn delete-btn">Delete</a>
+                </td>
+              </tr>
+            <%});%>
+        <% } else { %>
+              <tr><td colspan="6">No Product Found</td></tr>
+        <% }%>
       </tbody>
     </table>
   </div>
-
   </body>
 
 </html>

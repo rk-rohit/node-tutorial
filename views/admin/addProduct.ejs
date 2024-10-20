@@ -8,7 +8,7 @@
 
   <div class="container">
     <h1>Add New Product</h1>
-    <form>
+    <form method="post" action="/admin/save-product">
       <!-- Product Name -->
       <div class="form-group">
         <label for="productName">Product Name</label>
@@ -33,6 +33,12 @@
       <div class="form-group">
         <label for="imageUrl">Product Image URL</label>
         <input type="url" id="imageUrl" name="imageUrl" placeholder="Enter product image URL" required>
+      </div>
+
+       <!-- Product Quantity -->
+       <div class="form-group">
+        <label for="productDescription">Product Quantity</label>
+        <textarea rows="3" cols="70" id="productDescription" name="productDescription" required></textarea>
       </div>
 
       <!-- Submit Button -->
