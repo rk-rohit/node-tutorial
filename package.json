@@ -7,9 +7,7 @@
     "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "chmod +x .husky/commit-msg && husky install",
-    "commitlint": "commitlint --edit",
-    "commit": "cz",
-    "cz": "npx cz"
+    "commitlint": "commitlint --edit"
   },
   "author": "",
   "license": "ISC",
@@ -24,13 +22,6 @@
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
-    "commitizen": "^4.3.1",
-    "cz-conventional-changelog": "^3.3.0",
     "husky": "^8.0.0"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   }
 }
