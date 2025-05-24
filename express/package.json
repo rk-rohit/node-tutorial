@@ -6,8 +6,7 @@
   "scripts": {
     "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky",
-    "commitlint": "commitlint --edit"
+    "prepare": "husky"
   },
   "author": "",
   "license": "ISC",
@@ -20,8 +19,6 @@
     "nodemon": "^3.1.10"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.8.1",
-    "@commitlint/config-conventional": "^19.8.1",
     "husky": "^9.1.7"
   }
 }
