@@ -3,7 +3,6 @@ const dotenv = require("dotenv");
 const connectDB = require("./db");
 
 dotenv.config();
-
 connectDB();
 
 server.listen(process.env.PORT || 8000, ()=>{

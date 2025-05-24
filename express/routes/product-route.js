@@ -3,6 +3,7 @@ const {
   getProductById,
   updateProduct,
   createProduct,
+  seedDatabase
 } = require("../controller/productController");
 
 const express = require("express");
@@ -17,5 +18,7 @@ router.get("/:id", getProductById);
 router.post("/", createProduct);
 
 router.patch("/:id", updateProduct);
+
+router.post("/populate", seedDatabase);
 
 module.exports = router;
